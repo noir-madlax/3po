@@ -1,0 +1,375 @@
+<html lang="en"><head><script type="text/javascript" crossorigin="anonymous" async="" src="https://us-assets.i.posthog.com/static/array.js"></script><script src="https://static.readdy.ai/static/e.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3PO Lab: Turning Customer Insights into Decisions</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#6d28d9',secondary:'#8b5cf6'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+background-color: #111827;
+color: #f3f4f6;
+}
+.card {
+background: rgba(31, 41, 55, 0.7);
+backdrop-filter: blur(8px);
+border: 1px solid rgba(255, 255, 255, 0.1);
+transition: all 0.3s ease;
+}
+.card:hover {
+transform: translateY(-5px);
+box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+border: 1px solid rgba(109, 40, 217, 0.3);
+}
+.gradient-text {
+background: linear-gradient(90deg, #8b5cf6, #6d28d9);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+}
+input:focus {
+outline: none;
+}
+</style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.-bottom-12{bottom:-3rem}.-bottom-8{bottom:-2rem}.-left-4{left:-1rem}.-top-12{top:-3rem}.-top-16{top:-4rem}.-top-8{top:-2rem}.left-1\/2{left:50%}.left-1\/4{left:25%}.left-8{left:2rem}.right-0{right:0px}.right-1\/3{right:33.333333%}.right-8{right:2rem}.top-4{top:1rem}.top-8{top:2rem}.z-10{z-index:10}.z-50{z-index:50}.mx-4{margin-left:1rem;margin-right:1rem}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-12{margin-bottom:3rem}.mb-16{margin-bottom:4rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mr-3{margin-right:0.75rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-24{height:6rem}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-10{width:2.5rem}.w-24{width:6rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-7xl{max-width:80rem}.max-w-xl{max-width:36rem}.max-w-md{max-width:28rem}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-10{gap:2.5rem}.gap-8{gap:2rem}.space-x-8 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(2rem * var(--tw-space-x-reverse));margin-left:calc(2rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.whitespace-nowrap{white-space:nowrap}.\!rounded-button{border-radius:8px !important}.rounded{border-radius:8px}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:16px}.border-none{border-style:none}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-gray-800{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.bg-gray-900\/50{background-color:rgb(17 24 39 / 0.5)}.bg-primary{--tw-bg-opacity:1;background-color:rgb(109 40 217 / var(--tw-bg-opacity, 1))}.bg-opacity-50{--tw-bg-opacity:0.5}.p-3{padding:0.75rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-8{padding-top:2rem;padding-bottom:2rem}.text-center{text-align:center}.font-\[\'Pacifico\'\]{font-family:'Pacifico'}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-6xl{font-size:3.75rem;line-height:1}.font-bold{font-weight:700}.font-medium{font-weight:500}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-primary{--tw-text-opacity:1;color:rgb(109 40 217 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-green-500{--tw-text-opacity:1;color:rgb(34 197 94 / var(--tw-text-opacity, 1))}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:bg-opacity-90:hover{--tw-bg-opacity:0.9}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}@media (min-width: 768px){.md\:-left-12{left:-3rem}.md\:left-16{left:4rem}.md\:right-16{right:4rem}.md\:right-4{right:1rem}.md\:flex{display:flex}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:py-32{padding-top:8rem;padding-bottom:8rem}.md\:text-2xl{font-size:1.5rem;line-height:2rem}.md\:text-5xl{font-size:3rem;line-height:1}.md\:text-7xl{font-size:4.5rem;line-height:1}.md\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width: 1024px){.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}}</style><link type="image/png" rel="icon" href="https://public.readdy.ai/gen_page/readdy-logo.png"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&amp;display=swap"></head>
+<body>
+<div class="relative min-h-screen overflow-hidden">
+<!-- Navigation -->
+<nav class="relative z-10 px-6 py-4 flex justify-between items-center">
+<div class="text-3xl font-['Pacifico'] text-white">3PO Lab</div>
+<div class="hidden md:flex space-x-8">
+<a href="#products" class="text-gray-300 hover:text-white transition-colors">Products</a>
+<a href="#about" class="text-gray-300 hover:text-white transition-colors">About Us</a>
+<a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative z-10 px-6 py-20 md:py-32 flex flex-col items-center justify-center text-center">
+<style>
+@keyframes floating {
+0% { transform: translateY(0) rotate(var(--rotation)); }
+50% { transform: translateY(-10px) rotate(var(--rotation)); }
+100% { transform: translateY(0) rotate(var(--rotation)); }
+}
+.floating-emoji {
+animation: floating 2s ease-in-out infinite;
+animation-delay: var(--delay);
+transform-origin: center;
+}
+</style>
+<div class="relative">
+<div class="absolute -top-12 -left-4 md:-left-12 text-4xl md:text-5xl floating-emoji" style="--rotation: -15deg; --delay: 0s;">💬</div>
+<div class="absolute -top-8 right-0 md:right-4 text-4xl md:text-5xl floating-emoji" style="--rotation: 15deg; --delay: 0.5s;">📣</div>
+<div class="absolute -bottom-8 left-8 md:left-16 text-4xl md:text-5xl floating-emoji" style="--rotation: 0deg; --delay: 1s;">😍</div>
+<div class="absolute -bottom-12 right-8 md:right-16 text-4xl md:text-5xl floating-emoji" style="--rotation: 10deg; --delay: 1.5s;">💙</div>
+<div class="absolute top-4 left-1/4 text-4xl md:text-5xl floating-emoji" style="--rotation: -10deg; --delay: 2s;">❤️</div>
+<div class="absolute -top-16 left-1/2 text-4xl md:text-5xl floating-emoji" style="--rotation: 20deg; --delay: 2.5s;">👍🏾</div>
+<div class="absolute top-8 right-1/3 text-4xl md:text-5xl floating-emoji" style="--rotation: -5deg; --delay: 3s;">📊</div>
+<h1 class="text-5xl md:text-7xl font-bold mb-6 relative z-10">
+<span class="gradient-text">Turning Customer Insights into Decisions</span>
+</h1>
+</div>
+<p class="text-xl md:text-2xl gradient-text max-w-3xl mb-12"></p>
+<p class="text-lg md:text-xl text-gray-400 max-w-2xl mb-12">
+At 3PO Lab, we develop AI-powered market research tools that make it easier and faster to gather, understand, and act on customer insights.
+</p>
+</section>
+<!-- Products Section -->
+<section id="products" class="relative z-10 px-6 py-20">
+<div class="max-w-7xl mx-auto">
+<h2 class="text-4xl font-bold mb-16 text-center">Products</h2>
+<div class="grid md:grid-cols-2 gap-10">
+<!-- Xight Product Card -->
+<div class="card p-8 rounded-lg relative overflow-hidden group">
+<h3 class="text-2xl font-bold mb-4">
+Xight
+</h3>
+<p class="text-gray-300 mb-8">
+A Voice of Customer (VoC) intelligence platform that extract actionable insights dynamically from large volumes of customer feedback across multiple sales and social media.
+</p>
+<button id="xightDemoBtn" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap">
+Ask for demo
+</button>
+</div>
+<!-- Curio Product Card -->
+<div class="card p-8 rounded-lg relative overflow-hidden group">
+<h3 class="text-2xl font-bold mb-4">
+Curio
+</h3>
+<p class="text-gray-300 mb-8">
+An AI-driven survey tool that generates the right questions in real time, identifies and follow up high-value users, and summarizes insights from all surveys through interactive visuals.
+</p>
+<button id="curioDemoBtn" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap">
+Ask for demo
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- About Us Section -->
+<section id="about" class="relative z-10 px-6 py-20 bg-gray-900/50">
+<div class="max-w-7xl mx-auto">
+<h2 class="text-4xl font-bold mb-8 text-center">About Us</h2>
+<p class="text-lg text-gray-300 max-w-3xl mx-auto text-center mb-16">
+We are a team affiliated with MIT. The intelligence behind our tools is grounded in the invisible philosophy of customer understanding, shaped by leading research from the MIT Sloan School of Management.
+</p>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Team Member 1 -->
+<div class="card p-6 rounded-lg text-center">
+<div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-gray-800 flex items-center justify-center">
+<div class="w-full h-full" style="background-image: url('https://static.readdy.ai/image/7779cfed61de5aa6068d316a1875a0fd/55f386050884eb7bb6bf9e3d34642267.jpeg'); background-size: cover; background-position: center;"></div>
+</div>
+<h3 class="text-xl font-bold mb-1">Chengfeng Mao</h3>
+<p class="text-primary text-sm mb-3">Co-founder &amp; AI Scientist</p>
+<p class="text-gray-400 text-sm">MIT PhD candidate</p>
+</div>
+<!-- Team Member 2 -->
+<div class="card p-6 rounded-lg text-center">
+<div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-gray-800 flex items-center justify-center">
+<div class="w-full h-full" style="background-image: url('https://static.readdy.ai/image/7779cfed61de5aa6068d316a1875a0fd/9c93b9815fe3dae69c322929c1387815.jpeg'); background-size: cover; background-position: center;"></div>
+</div>
+<h3 class="text-xl font-bold mb-1">Scarlett Lin</h3>
+<p class="text-primary text-sm mb-3">Co-founder &amp; Marketer &amp; PM</p>
+<p class="text-gray-400 text-sm">MIT MBA candidate</p>
+</div>
+<!-- Team Member 3 -->
+<div class="card p-6 rounded-lg text-center">
+<div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-gray-800 flex items-center justify-center">
+<div class="w-full h-full" style="background-image: url('https://static.readdy.ai/image/7779cfed61de5aa6068d316a1875a0fd/d67d368e7befb3c2c290e09a5326e563.png'); background-size: cover; background-position: center;"></div>
+</div>
+<h3 class="text-xl font-bold mb-1">Rigel Zhang</h3>
+<p class="text-primary text-sm mb-3">Co-founder &amp; Engineer</p>
+</div>
+<!-- Team Member 4 -->
+<div class="card p-6 rounded-lg text-center">
+<div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-gray-800 flex items-center justify-center">
+<div class="w-full h-full" style="background-image: url('https://static.readdy.ai/image/7779cfed61de5aa6068d316a1875a0fd/4976e9599146e9e65fc9d3fd4e705031.png'); background-size: cover; background-position: center;"></div>
+</div>
+<h3 class="text-xl font-bold mb-1">Prof. John Hauser</h3>
+<p class="text-primary text-sm mb-3">Advisor</p>
+<p class="text-gray-400 text-sm">MIT Sloan School of Management</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="relative z-10 px-6 py-20">
+<div class="max-w-4xl mx-auto">
+<h2 class="text-4xl font-bold mb-16 text-center">Get in Touch</h2>
+<div class="card p-8 rounded-lg">
+<div class="grid md:grid-cols-2 gap-8">
+<div>
+<h3 class="text-2xl font-bold mb-4">Contact Us</h3>
+<p class="text-gray-300 mb-6">
+Interested in our products? Have questions about how we can help your business? Reach out to us!
+</p>
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-3">
+<i class="ri-map-pin-line text-xl"></i>
+</div>
+<span class="text-gray-300">Cambridge, Massachusetts</span>
+</div>
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-3">
+<i class="ri-mail-line text-xl"></i>
+</div>
+<span class="text-gray-300">contact@3polab.com</span>
+</div>
+</div>
+<div>
+<form action="mailto:jieyun@mit.edu" method="POST" enctype="text/plain">
+<div class="mb-4">
+<label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+<input type="text" id="name" name="name" class="w-full bg-gray-800 border-none rounded p-3 text-white" placeholder="Your name">
+</div>
+<div class="mb-4">
+<label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+<input type="email" id="email" name="email" class="w-full bg-gray-800 border-none rounded p-3 text-white" placeholder="Your email">
+</div>
+<div class="mb-4">
+<label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+<textarea id="message" name="message" rows="4" class="w-full bg-gray-800 border-none rounded p-3 text-white" placeholder="Your message"></textarea>
+</div>
+<button type="submit" class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap w-full">
+Send Message
+</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Demo Request Modals -->
+<div id="xightDemoModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+<div class="bg-gray-900 p-8 rounded-lg w-full max-w-xl mx-4">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-2xl font-bold text-white">Schedule Xight Demo</h3>
+<button id="closeXightModal" class="text-gray-400 hover:text-white">
+<i class="ri-close-line text-2xl"></i>
+</button>
+</div>
+<form id="xightDemoForm" class="space-y-4" action="mailto:jieyun@mit.edu" method="POST" enctype="text/plain">
+<div>
+<label class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+<input type="text" name="name" required="" class="w-full bg-gray-800 border-none rounded p-3 text-white">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-300 mb-1">Company Name</label>
+<input type="text" name="company" required="" class="w-full bg-gray-800 border-none rounded p-3 text-white">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-300 mb-1">Company Email</label>
+<input type="email" name="email" required="" class="w-full bg-gray-800 border-none rounded p-3 text-white">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-300 mb-1">Preferred Date &amp; Time</label>
+<input type="datetime-local" name="datetime" required="" class="w-full bg-gray-800 border-none rounded p-3 text-white">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-300 mb-1">Additional Comments (Optional)</label>
+<textarea name="comments" rows="3" class="w-full bg-gray-800 border-none rounded p-3 text-white"></textarea>
+</div>
+<div>
+<button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap">Submit Request</button>
+</div>
+</form>
+</div>
+</div>
+<div id="curioDemoModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+<div class="bg-gray-900 p-8 rounded-lg w-full max-w-xl mx-4">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-2xl font-bold text-white">Schedule Curio Demo</h3>
+<button id="closeCurioModal" class="text-gray-400 hover:text-white">
+<i class="ri-close-line text-2xl"></i>
+</button>
+</div>
+<form id="curioDemoForm" class="space-y-4" action="mailto:jieyun@mit.edu" method="POST" enctype="text/plain">
+<div>
+<label class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+<input type="text" name="name" required="" class="w-full bg-gray-800 border-none rounded p-3 text-white">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-300 mb-1">Company Name</label>
+<input type="text" name="company" required="" class="w-full bg-gray-800 border-none rounded p-3 text-white">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-300 mb-1">Company Email</label>
+<input type="email" name="email" required="" class="w-full bg-gray-800 border-none rounded p-3 text-white">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-300 mb-1">Preferred Date &amp; Time</label>
+<input type="datetime-local" name="datetime" required="" class="w-full bg-gray-800 border-none rounded p-3 text-white">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-300 mb-1">Additional Comments (Optional)</label>
+<textarea name="comments" rows="3" class="w-full bg-gray-800 border-none rounded p-3 text-white"></textarea>
+</div>
+<div>
+<button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap">Submit Request</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Success Modal -->
+<div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+<div class="bg-gray-900 p-8 rounded-lg w-full max-w-md mx-4 text-center">
+<div class="mb-6">
+<i class="ri-checkbox-circle-line text-6xl text-green-500"></i>
+</div>
+<h3 class="text-2xl font-bold text-white mb-4">Request Submitted!</h3>
+<p class="text-gray-300 mb-6">Thank you for your interest. We'll contact you shortly to confirm your demo session.</p>
+<button id="closeSuccessModal" class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap w-full">Close</button>
+</div>
+</div>
+<!-- Footer -->
+<footer class="relative z-10 px-6 py-8 bg-gray-900">
+<div class="max-w-7xl mx-auto text-center">
+<p class="text-gray-500 text-sm">
+© 2025 3PO Lab. All rights reserved.
+</p>
+</div>
+</footer>
+</div>
+<script type="text/javascript" crossorigin="anonymous" src="https://us-assets.i.posthog.com/array/phc_t9tkQZJiyi2ps9zUYm8TDsL6qXo4YmZx0Ot5rBlAlEd/config.js"></script><script type="text/javascript" crossorigin="anonymous" src="https://us-assets.i.posthog.com/static/dead-clicks-autocapture.js?v=1.240.0"></script><script>
+document.addEventListener('DOMContentLoaded', function() {
+// Demo modal functionality
+const xightDemoBtn = document.getElementById('xightDemoBtn');
+const curioDemoBtn = document.getElementById('curioDemoBtn');
+const xightDemoModal = document.getElementById('xightDemoModal');
+const curioDemoModal = document.getElementById('curioDemoModal');
+const successModal = document.getElementById('successModal');
+const closeXightModal = document.getElementById('closeXightModal');
+const closeCurioModal = document.getElementById('closeCurioModal');
+const closeSuccessModal = document.getElementById('closeSuccessModal');
+const xightDemoForm = document.getElementById('xightDemoForm');
+const curioDemoForm = document.getElementById('curioDemoForm');
+function showModal(modal) {
+modal.classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+}
+function hideModal(modal) {
+modal.classList.add('hidden');
+document.body.style.overflow = '';
+}
+function showSuccessModal() {
+hideModal(xightDemoModal);
+hideModal(curioDemoModal);
+showModal(successModal);
+}
+xightDemoBtn.addEventListener('click', () => showModal(xightDemoModal));
+curioDemoBtn.addEventListener('click', () => showModal(curioDemoModal));
+closeXightModal.addEventListener('click', () => hideModal(xightDemoModal));
+closeCurioModal.addEventListener('click', () => hideModal(curioDemoModal));
+closeSuccessModal.addEventListener('click', () => hideModal(successModal));
+document.querySelectorAll('.closeModal').forEach(btn => {
+btn.addEventListener('click', function(e) {
+e.preventDefault();
+hideModal(this.closest('.fixed'));
+});
+});
+[xightDemoForm, curioDemoForm].forEach(form => {
+form.addEventListener('submit', function(e) {
+const formData = new FormData(this);
+const data = Object.fromEntries(formData.entries());
+console.log('Demo request data:', data);
+showSuccessModal();
+});
+});
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+if (targetId !== '#') {
+document.querySelector(targetId).scrollIntoView({
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+<script>
+    !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
+    posthog.init('phc_t9tkQZJiyi2ps9zUYm8TDsL6qXo4YmZx0Ot5rBlAlEd', {
+        api_host: 'https://us.i.posthog.com',
+        autocapture: false,
+        capture_pageview: false,
+        capture_pageleave: false,
+        capture_performance: {
+            web_vitals: false,
+        },
+        rageclick: false,
+    })
+    window.shareKey = 'kl86Fx6eSsu5XJMTXzlo3Q';
+    window.host = 'readdy.ai';
+</script>
+<script src="https://static.readdy.ai/static/share.js"></script>
+
+<div class="glasp-extension-toaster" style="display: block; width: 320px; margin: unset; padding: unset; border: unset; border-radius: unset; outline: unset; background-color: unset; box-shadow: unset; position: fixed; top: 40px; right: 24px; z-index: 9999;"></div><div class="glasp-extension" style="display: block; width: unset; margin: unset; padding: unset; border: unset; border-radius: unset; outline: unset; background-color: unset; box-shadow: unset; position: fixed; bottom: 16px; right: 16px; z-index: 9999;"></div><doubao-ai-csui id="412fd9bc61e8466ea9723a070f4d36fc" data-host-id="52a8dde7-ae2e-4969-b2e4-b3bfa648d040"></doubao-ai-csui><div id="doubao-ai-translate-image-assistant52a8dde7-ae2e-4969-b2e4-b3bfa648d040" data-collection-img-host-id="52a8dde7-ae2e-4969-b2e4-b3bfa648d040"></div><div style="width: 0px; height: 0px; position: absolute; z-index: 200000;"></div><div id="doubao-ai-assistant" aria-label="flow-ai-assistant" class="flow-ai-select-bar-enabled" aria-description="flow-ai-select-bar-enabled" style="width: 0px; height: 0px; position: absolute; top: 0px; left: 0px; overflow: hidden;"></div></body></html>
