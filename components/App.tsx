@@ -6,6 +6,7 @@ import Head from 'next/head';
 const App: React.FC = () => {
   const [xsightModalVisible, setXsightModalVisible] = useState<boolean>(false);
   const [curioModalVisible, setCurioModalVisible] = useState<boolean>(false);
+  const [holaModalVisible, setHolaModalVisible] = useState<boolean>(false);
   const [successModalVisible, setSuccessModalVisible] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>('hero');
   const [contactFormStatus, setContactFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -24,6 +25,7 @@ const App: React.FC = () => {
   const showSuccessModal = () => {
     hideModal(setXsightModalVisible);
     hideModal(setCurioModalVisible);
+    hideModal(setHolaModalVisible);
     setSuccessModalVisible(true);
   };
 
@@ -40,7 +42,7 @@ const App: React.FC = () => {
       datetime: formData.get('datetime'),
       comments: formData.get('comments'),
       // 确定当前是哪个产品的演示请求
-      product: xsightModalVisible ? 'Xsight' : 'Curio'
+      product: xsightModalVisible ? 'Xeinth' : curioModalVisible ? 'Curio' : 'Hola'
     };
     
     try {
@@ -307,14 +309,14 @@ const App: React.FC = () => {
         <section id="products" className="relative z-10 px-6 py-20">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold mb-16 text-center">Products</h2>
-            <div className="grid md:grid-cols-2 gap-10">
-              {/* Xsight Product Card */}
+            <div className="grid md:grid-cols-3 gap-10">
+              {/* Xeinth Product Card */}
               <div className="card p-8 rounded-lg relative overflow-hidden group">
                 <h3 className="text-2xl font-bold mb-4">
-                  Xsight
+                  Xeinth
                 </h3>
                 <p className="text-gray-300 mb-8">
-                  A Voice of Customer (VoC) intelligence platform that extract actionable insights dynamically from large volumes of customer feedback across multiple sales and social media.
+                  An AI agent that helps manufacturers and e-commerce sellers identify and fill market gaps. It compiles competitors' product listings, analyzes customer feedback, cleans and structures messy data, and generates actionable reports to guide product and marketing strategy.
                 </p>
                 <button 
                   onClick={() => showModal(setXsightModalVisible)}
@@ -330,10 +332,26 @@ const App: React.FC = () => {
                   Curio
                 </h3>
                 <p className="text-gray-300 mb-8">
-                  An AI-driven survey tool that generates the right questions in real time, identifies and follow up high-value users, and summarizes insights from all surveys through interactive visuals.
+                  An AI assistant that helps online surveys capture what you really want to know. It generates targeted questions in real time, identifies and follows up with high-value respondents, and summarizes insights through interactive visuals.
                 </p>
                 <button 
                   onClick={() => showModal(setCurioModalVisible)}
+                  className="bg-primary text-white px-6 py-2 rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap"
+                >
+                  Ask for demo
+                </button>
+              </div>
+
+              {/* Hola Product Card */}
+              <div className="card p-8 rounded-lg relative overflow-hidden group">
+                <h3 className="text-2xl font-bold mb-4">
+                  Hola
+                </h3>
+                <p className="text-gray-300 mb-8">
+                  An AI agent that helps you effortlessly cold outreach and engage potential clients or survey participants on LinkedIn at scale. It filters contacts based on your goals, sends personalized messages, and tracks engagement across the outreach process.
+                </p>
+                <button 
+                  onClick={() => showModal(setHolaModalVisible)}
                   className="bg-primary text-white px-6 py-2 rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap"
                 >
                   Ask for demo
@@ -350,7 +368,7 @@ const App: React.FC = () => {
             <p className="text-lg text-gray-300 max-w-3xl mx-auto text-center mb-16">
               We are a team affiliated with MIT. The intelligence behind our tools is grounded in the invisible philosophy of customer understanding, shaped by leading research from the MIT Sloan School of Management.
             </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
               {/* Team Member 1 */}
               <div className="card p-6 rounded-lg text-center">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-gray-800 flex items-center justify-center">
@@ -367,7 +385,7 @@ const App: React.FC = () => {
                   <div className="w-full h-full" style={{ backgroundImage: `url('https://static.readdy.ai/image/7779cfed61de5aa6068d316a1875a0fd/9c93b9815fe3dae69c322929c1387815.jpeg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                 </div>
                 <h3 className="text-xl font-bold mb-1">Scarlett Lin</h3>
-                <p className="text-primary text-sm mb-3">Co-founder & Marketer</p>
+                <p className="text-primary text-sm mb-3">Co-founder & Marketer & PM</p>
                 <p className="text-gray-400 text-sm">MIT MBA candidate</p>
               </div>
               
@@ -379,14 +397,17 @@ const App: React.FC = () => {
                 <h3 className="text-xl font-bold mb-1">Rigel Zhang</h3>
                 <p className="text-primary text-sm mb-3">Co-founder & Engineer</p>
               </div>
-              
-              {/* Team Member 4 */}
-              <div className="card p-6 rounded-lg text-center">
+            </div>
+            
+            {/* Advisor Section */}
+            <h2 className="text-4xl font-bold mb-8 text-center">Advisor</h2>
+            <div className="flex justify-center">
+              {/* Advisor */}
+              <div className="card p-6 rounded-lg text-center max-w-xs">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-gray-800 flex items-center justify-center">
                   <div className="w-full h-full" style={{ backgroundImage: `url('https://static.readdy.ai/image/7779cfed61de5aa6068d316a1875a0fd/4976e9599146e9e65fc9d3fd4e705031.png')`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                 </div>
                 <h3 className="text-xl font-bold mb-1">Prof. John Hauser</h3>
-                <p className="text-primary text-sm mb-3">Advisor</p>
                 <p className="text-gray-400 text-sm">MIT Sloan School of Management</p>
               </div>
             </div>
@@ -465,7 +486,7 @@ const App: React.FC = () => {
           <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
             <div className="bg-gray-900 p-8 rounded-lg w-full max-w-xl mx-4">
               <div className="flex justify-between items-center mb-6">
-                <h3 className="text-2xl font-bold text-white">Schedule Xsight Demo</h3>
+                <h3 className="text-2xl font-bold text-white">Schedule Xeinth Demo</h3>
                 <button onClick={() => hideModal(setXsightModalVisible)} className="text-gray-400 hover:text-white">
                   <i className="ri-close-line text-2xl"></i>
                 </button>
@@ -524,6 +545,63 @@ const App: React.FC = () => {
               <div className="flex justify-between items-center mb-6">
                 <h3 className="text-2xl font-bold text-white">Schedule Curio Demo</h3>
                 <button onClick={() => hideModal(setCurioModalVisible)} className="text-gray-400 hover:text-white">
+                  <i className="ri-close-line text-2xl"></i>
+                </button>
+              </div>
+              <form className="space-y-4" onSubmit={handleFormSubmit} action="mailto:jieyun@mit.edu" method="POST" encType="text/plain">
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                  <input type="text" name="name" required className="w-full bg-gray-800 border-none rounded p-3 text-white" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-1">Company Name</label>
+                  <input type="text" name="company" required className="w-full bg-gray-800 border-none rounded p-3 text-white" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-1">Company Email</label>
+                  <input type="email" name="email" required className="w-full bg-gray-800 border-none rounded p-3 text-white" />
+                </div>
+                <div className="relative">
+                  <label className="block text-sm font-medium text-gray-300 mb-1">Preferred Date & Time</label>
+                  <div className="relative">
+                    <input type="datetime-local" name="datetime" required className="w-full bg-gray-800 border-none rounded p-3 text-white [color-scheme:dark] cursor-pointer" />
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-1">Additional Comments (Optional)</label>
+                  <textarea name="comments" rows={3} className="w-full bg-gray-800 border-none rounded p-3 text-white"></textarea>
+                </div>
+                <div>
+                  <button type="submit" className="w-full bg-primary text-white px-6 py-3 rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap relative overflow-hidden" disabled={demoFormStatus === 'submitting'}>
+                    {demoFormStatus === 'submitting' && (
+                      <span className="absolute inset-0 flex items-center justify-center bg-primary">
+                        Sending...
+                      </span>
+                    )}
+                    {demoFormStatus === 'success' && (
+                      <span className="absolute inset-0 flex items-center justify-center bg-green-600">
+                        Request Sent!
+                      </span>
+                    )}
+                    {demoFormStatus === 'error' && (
+                      <span className="absolute inset-0 flex items-center justify-center bg-red-600">
+                        Error! Try Again
+                      </span>
+                    )}
+                    Submit Request
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        )}
+
+        {holaModalVisible && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+            <div className="bg-gray-900 p-8 rounded-lg w-full max-w-xl mx-4">
+              <div className="flex justify-between items-center mb-6">
+                <h3 className="text-2xl font-bold text-white">Schedule Hola Demo</h3>
+                <button onClick={() => hideModal(setHolaModalVisible)} className="text-gray-400 hover:text-white">
                   <i className="ri-close-line text-2xl"></i>
                 </button>
               </div>
