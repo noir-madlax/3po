@@ -42,7 +42,7 @@ const App: React.FC = () => {
       datetime: formData.get('datetime'),
       comments: formData.get('comments'),
       // 确定当前是哪个产品的演示请求
-      product: xsightModalVisible ? 'Xeinth' : curioModalVisible ? 'Curio' : 'Hola'
+      product: xsightModalVisible ? 'Xenith' : curioModalVisible ? 'Curio' : 'Hola'
     };
     
     try {
@@ -310,10 +310,10 @@ const App: React.FC = () => {
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold mb-16 text-center">Products</h2>
             <div className="grid md:grid-cols-3 gap-10">
-              {/* Xeinth Product Card */}
+              {/* Xenith Product Card */}
               <div className="card p-8 rounded-lg relative overflow-hidden group">
                 <h3 className="text-2xl font-bold mb-4">
-                  Xeinth
+                  Xenith
                 </h3>
                 <p className="text-gray-300 mb-8">
                   An AI agent that helps manufacturers and e-commerce sellers identify and fill market gaps. It compiles competitors' product listings, analyzes customer feedback, cleans and structures messy data, and generates actionable reports to guide product and marketing strategy.
@@ -486,7 +486,7 @@ const App: React.FC = () => {
           <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
             <div className="bg-gray-900 p-8 rounded-lg w-full max-w-xl mx-4">
               <div className="flex justify-between items-center mb-6">
-                <h3 className="text-2xl font-bold text-white">Schedule Xeinth Demo</h3>
+                <h3 className="text-2xl font-bold text-white">Schedule Xenith Demo</h3>
                 <button onClick={() => hideModal(setXsightModalVisible)} className="text-gray-400 hover:text-white">
                   <i className="ri-close-line text-2xl"></i>
                 </button>
