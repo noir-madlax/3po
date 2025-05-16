@@ -400,7 +400,7 @@ const App: React.FC = () => {
             </div>
             
             {/* Advisor Section */}
-            <h2 className="text-4xl font-bold mb-8 text-center">Advisor</h2>
+            <h2 className="text-4xl font-bold mb-8 text-center">Independent Advisor</h2>
             <div className="flex justify-center">
               {/* Advisor */}
               <div className="card p-6 rounded-lg text-center max-w-xs">
