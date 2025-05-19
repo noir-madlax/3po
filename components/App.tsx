@@ -180,7 +180,7 @@ const App: React.FC = () => {
   return (
     <>
       <Head>
-        <title>3PO Lab: Turning Customer Insights into Decisions</title>
+        <title>3PO Lab: Turning Market Insights into Decisions</title>
         <link rel="icon" type="image/svg+xml" href="/3po_logo.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -296,7 +296,7 @@ const App: React.FC = () => {
             <div className="absolute -top-16 left-1/2 text-4xl md:text-5xl floating-emoji" style={{ '--rotation': '20deg', '--delay': '2.5s' } as React.CSSProperties}>👍🏾</div>
             <div className="absolute top-8 right-1/3 text-4xl md:text-5xl floating-emoji" style={{ '--rotation': '-5deg', '--delay': '3s' } as React.CSSProperties}>📊</div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 relative z-10">
-              <span className="gradient-text">Turning Customer Insights into Decisions</span>
+              <span className="gradient-text">Turning Market Insights into Decisions</span>
             </h1>
           </div>
           <p className="text-xl md:text-2xl gradient-text max-w-3xl mb-12"></p>
@@ -385,7 +385,7 @@ const App: React.FC = () => {
                   <div className="w-full h-full" style={{ backgroundImage: `url('https://static.readdy.ai/image/7779cfed61de5aa6068d316a1875a0fd/9c93b9815fe3dae69c322929c1387815.jpeg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                 </div>
                 <h3 className="text-xl font-bold mb-1">Scarlett Lin</h3>
-                <p className="text-primary text-sm mb-3">Co-founder & Marketer & PM</p>
+                <p className="text-primary text-sm mb-3">Co-founder & Marketer</p>
                 <p className="text-gray-400 text-sm">MIT MBA candidate</p>
               </div>
               
