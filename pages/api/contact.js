@@ -21,7 +21,7 @@ export default async function handler(req, res) {
 
   // 准备邮件内容
   const mailOptions = {
-    from: `"3PO Lab网站" <zhangzic@gmail.com>`,
+    from: `"Rigel Zhang" <zhangzic@gmail.com>`,
     to: 'jieyun@mit.edu', // 接收者邮箱
     subject: `3PO Lab网站的新消息 - 来自${name}`,
     text: `

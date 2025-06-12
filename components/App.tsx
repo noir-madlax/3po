@@ -182,17 +182,6 @@ const App: React.FC = () => {
       <Head>
         <title>3PO Lab: Turning Market Insights into Decisions</title>
         <link rel="icon" type="image/svg+xml" href="/3po_logo.svg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
-        <script src="https://cdn.tailwindcss.com/3.4.16" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `tailwind.config={theme:{extend:{colors:{primary:'#6d28d9',secondary:'#8b5cf6'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}`
-          }}
-        />
       </Head>
 
       <style jsx global>{`
@@ -219,19 +208,7 @@ const App: React.FC = () => {
           background-clip: text;
           color: transparent;
         }
-        .logo-text {
-          font-family: 'Pacifico', cursive;
-          color: #f3f4f6;
-          font-size: 2.2rem;
-          font-weight: 400;
-        }
-        /* 为数字3添加特殊样式，使其显示得更大 */
-        .logo-text .number-3 {
-          font-size: 1.3em; /* 设置为正常字体的1.3倍大小 */
-          font-weight: 200; /* 设置字体粗细度为较细 */
-          display: inline-block;
-          vertical-align: baseline;
-        }
+
         /* 导航菜单样式 */
         .nav-link {
           position: relative;
@@ -276,7 +253,12 @@ const App: React.FC = () => {
         {/* Navigation */}
         <nav className="relative z-10 px-6 py-4 flex justify-between items-center">
           <div className="h-10 flex items-center">
-            <span className="logo-text"><span className="number-3">3</span>PO Lab</span>
+            <img 
+              src="/3POLAB.svg" 
+              alt="3PO Lab" 
+              className="h-full w-auto"
+              style={{ maxHeight: '20px' }}
+            />
           </div>
           <div className="hidden md:flex space-x-8">
             <a href="#products" className={`nav-link ${activeSection === 'products' ? 'active' : ''}`}>Products</a>
