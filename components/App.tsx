@@ -298,7 +298,7 @@ const App: React.FC = () => {
                   Xenith
                 </h3>
                 <p className="text-gray-300 mb-8">
-                  An AI agent that helps manufacturers and e-commerce sellers identify and fill market gaps. It compiles competitors' product listings, analyzes customer feedback, cleans and structures messy data, and generates actionable reports to guide product and marketing strategy.
+                We are building an AI agent, Xenith, to automate the data grunt work and generate direct answers to questions about market landscape, customer insights and competitive analysis.
                 </p>
                 <button 
                   onClick={() => showModal(setXsightModalVisible)}
