@@ -181,7 +181,7 @@ const App: React.FC = () => {
     <>
       <Head>
         <title>3PO Lab: Turning Market Insights into Decisions</title>
-        <link rel="icon" type="image/svg+xml" href="/3po_logo.svg" />
+        <link rel="icon" type="image/svg+xml" href="/logo-icon-0617-scarlett.svg" />
       </Head>
 
       <style jsx global>{`
@@ -234,6 +234,18 @@ const App: React.FC = () => {
         .nav-link:hover:after {
           width: 100%;
         }
+        
+        /* Logo styling */
+        .logo-icon,
+        .logo-text {
+          filter: brightness(0) invert(1);
+        }
+        
+        .logo-text {
+          font-weight: bold;
+          filter: brightness(0) invert(1) drop-shadow(0 0 0px white);
+        }
+        
         input:focus {
           outline: none;
         }
@@ -252,11 +264,17 @@ const App: React.FC = () => {
       <div className="relative min-h-screen overflow-hidden">
         {/* Navigation */}
         <nav className="relative z-10 px-6 py-4 flex justify-between items-center">
-          <div className="h-10 flex items-center">
+          <div className="h-10 flex items-center space-x-2">
             <img 
-              src="/3POLAB.svg" 
+              src="/logo-icon-0617-scarlett.svg" 
+              alt="3PO Lab Icon" 
+              className="h-full w-auto logo-icon"
+              style={{ maxHeight: '24px' }}
+            />
+            <img 
+              src="/logo-teamname-0617-scarlett.svg" 
               alt="3PO Lab" 
-              className="h-full w-auto"
+              className="h-full w-auto logo-text"
               style={{ maxHeight: '20px' }}
             />
           </div>
