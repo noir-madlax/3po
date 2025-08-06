@@ -309,7 +309,7 @@ const App: React.FC = () => {
         <section id="products" className="relative z-10 px-6 py-20">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold mb-16 text-center">Products</h2>
-            <div className="grid md:grid-cols-3 gap-10">
+            <div className="grid md:grid-cols-2 gap-10">
               {/* Xenith Product Card */}
               <div className="card p-8 rounded-lg relative overflow-hidden group">
                 <h3 className="text-2xl font-bold mb-4">
