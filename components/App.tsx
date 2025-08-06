@@ -296,12 +296,12 @@ const App: React.FC = () => {
             <div className="absolute -top-16 left-1/2 text-4xl md:text-5xl floating-emoji" style={{ '--rotation': '20deg', '--delay': '2.5s' } as React.CSSProperties}>👍🏾</div>
             <div className="absolute top-8 right-1/3 text-4xl md:text-5xl floating-emoji" style={{ '--rotation': '-5deg', '--delay': '3s' } as React.CSSProperties}>📊</div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 relative z-10">
-              <span className="gradient-text">Turning Market Insights into Decisions</span>
+              <span className="gradient-text">Turning data into market visibility</span>
             </h1>
           </div>
           <p className="text-xl md:text-2xl gradient-text max-w-3xl mb-12"></p>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mb-12">
-            At 3PO Lab, we develop AI-powered market research tools that make it easier and faster to gather, understand, and act on customer insights.
+          At 3PO Lab, we build AI-powered tools that help teams collect, analyze, and act on overwhelming market data effortlessly.
           </p>
         </section>
 
@@ -316,7 +316,7 @@ const App: React.FC = () => {
                   Xenith
                 </h3>
                 <p className="text-gray-300 mb-8">
-                We are building an AI agent, Xenith, to automate the data grunt work and generate direct answers to questions about market landscape, customer insights and competitive analysis.
+                Xenith is your AI-powered data analyst for Amazon market analysis. It handles the grunt work, from scraping messy data to generating clean, ready-to-use charts, so you don’t have to. You get instant visibility into the competitive landscape and what customers really care about.
                 </p>
                 <button 
                   onClick={() => showModal(setXsightModalVisible)}
@@ -342,21 +342,7 @@ const App: React.FC = () => {
                 </button>
               </div>
 
-              {/* Hola Product Card */}
-              <div className="card p-8 rounded-lg relative overflow-hidden group">
-                <h3 className="text-2xl font-bold mb-4">
-                  Hola
-                </h3>
-                <p className="text-gray-300 mb-8">
-                  An AI agent that helps you effortlessly cold outreach and engage potential clients or survey participants on LinkedIn at scale. It filters contacts based on your goals, sends personalized messages, and tracks engagement across the outreach process.
-                </p>
-                <button 
-                  onClick={() => showModal(setHolaModalVisible)}
-                  className="bg-primary text-white px-6 py-2 rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap"
-                >
-                  Ask for demo
-                </button>
-              </div>
+             
             </div>
           </div>
         </section>
@@ -366,7 +352,7 @@ const App: React.FC = () => {
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold mb-8 text-center">About Us</h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto text-center mb-16">
-              We are a team affiliated with MIT. The intelligence behind our tools is grounded in the invisible philosophy of customer understanding, shaped by leading research from the MIT Sloan School of Management.
+            We are a team from MIT. The intelligence behind our tools is grounded in the algorithmic design and philosophy of market understanding, shaped by leading research from the MIT Sloan School of Management.
             </p>
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               {/* Team Member 1 */}
@@ -375,7 +361,7 @@ const App: React.FC = () => {
                   <div className="w-full h-full" style={{ backgroundImage: `url('https://static.readdy.ai/image/7779cfed61de5aa6068d316a1875a0fd/55f386050884eb7bb6bf9e3d34642267.jpeg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                 </div>
                 <h3 className="text-xl font-bold mb-1">Chengfeng Mao</h3>
-                <p className="text-primary text-sm mb-3">Co-founder & AI Scientist</p>
+                <p className="text-primary text-sm mb-3">Chief AI Scientist</p>
                 <p className="text-gray-400 text-sm">MIT PhD candidate</p>
               </div>
               
@@ -385,8 +371,8 @@ const App: React.FC = () => {
                   <div className="w-full h-full" style={{ backgroundImage: `url('https://static.readdy.ai/image/7779cfed61de5aa6068d316a1875a0fd/9c93b9815fe3dae69c322929c1387815.jpeg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                 </div>
                 <h3 className="text-xl font-bold mb-1">Scarlett Lin</h3>
-                <p className="text-primary text-sm mb-3">Co-founder & Marketer</p>
-                <p className="text-gray-400 text-sm">MIT MBA candidate</p>
+                <p className="text-primary text-sm mb-3">Chief Executive Officer</p>
+                <p className="text-gray-400 text-sm">MIT Sloan Fellow MBA</p>
               </div>
               
               {/* Team Member 3 */}
@@ -395,7 +381,7 @@ const App: React.FC = () => {
                   <div className="w-full h-full" style={{ backgroundImage: `url('https://static.readdy.ai/image/7779cfed61de5aa6068d316a1875a0fd/d67d368e7befb3c2c290e09a5326e563.png')`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                 </div>
                 <h3 className="text-xl font-bold mb-1">Rigel Zhang</h3>
-                <p className="text-primary text-sm mb-3">Co-founder & Engineer</p>
+                <p className="text-primary text-sm mb-3">Chief Technology Officer</p>
               </div>
             </div>
             
@@ -408,7 +394,7 @@ const App: React.FC = () => {
                   <div className="w-full h-full" style={{ backgroundImage: `url('https://static.readdy.ai/image/7779cfed61de5aa6068d316a1875a0fd/4976e9599146e9e65fc9d3fd4e705031.png')`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                 </div>
                 <h3 className="text-xl font-bold mb-1">Prof. John Hauser</h3>
-                <p className="text-gray-400 text-sm">MIT Sloan School of Management</p>
+                <p className="text-gray-400 text-sm">Kirin Professor at MIT Sloan</p>
               </div>
             </div>
           </div>
