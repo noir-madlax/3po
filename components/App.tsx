@@ -266,16 +266,10 @@ const App: React.FC = () => {
         <nav className="relative z-10 px-6 py-4 flex justify-between items-center">
           <div className="h-10 flex items-center space-x-2">
             <img 
-              src="/logo-icon-0617-scarlett.svg" 
+              src="/3POLAB 2.svg" 
               alt="3PO Lab Icon" 
               className="h-full w-auto logo-icon"
               style={{ maxHeight: '24px' }}
-            />
-            <img 
-              src="/logo-teamname-0617-scarlett.svg" 
-              alt="3PO Lab" 
-              className="h-full w-auto logo-text"
-              style={{ maxHeight: '20px' }}
             />
           </div>
           <div className="hidden md:flex space-x-8">
