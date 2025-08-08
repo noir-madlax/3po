@@ -181,7 +181,7 @@ const App: React.FC = () => {
     <>
       <Head>
         <title>3PO Lab: Turning Market Insights into Decisions</title>
-        <link rel="icon" type="image/svg+xml" href="/logo-icon-0617-scarlett.svg" />
+        <link rel="icon" type="image/svg+xml" href="/3po_logo-0807.svg" />
       </Head>
 
       <style jsx global>{`
@@ -389,7 +389,7 @@ const App: React.FC = () => {
             <h2 className="text-4xl font-bold mb-8 text-center">Independent Advisor</h2>
             <div className="flex justify-center">
               {/* Advisor */}
-              <div className="card p-6 rounded-lg text-center max-w-xs">
+              <div className="card p-3 rounded-lg text-center w-full md:w-2/6 h-60">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-gray-800 flex items-center justify-center">
                   <div className="w-full h-full" style={{ backgroundImage: `url('https://static.readdy.ai/image/7779cfed61de5aa6068d316a1875a0fd/4976e9599146e9e65fc9d3fd4e705031.png')`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                 </div>
